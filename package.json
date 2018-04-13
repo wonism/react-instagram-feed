@@ -1,12 +1,16 @@
 {
   "name": "react-instagram-feed",
-  "version": "0.1.0-alpha",
+  "version": "0.1.1-alpha",
   "description": "Component for Instagram feeds",
   "main": "dist/react-instagram-feed.js",
   "author": "",
   "license": "ISC",
   "homepage": "https://github.com/wonism/react-instagram-feed",
-  "keywords": [],
+  "keywords": [
+    "react",
+    "instagram",
+    "feed"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wonism/react-instagram-feed.git"

@@ -1886,7 +1886,7 @@ var Feed = function (_PureComponent) {
       })(global.document, 'script', 'ig-jsonp');
     };
 
-    _this.addToken = lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.add(lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.__, lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.isNil(_this.props.accessToken) ? '?client_id=' + _this.props.clientId : '?access_token=' + _this.props.accessToken);
+    _this.addToken = lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.add(lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.__, '?access_token=' + _this.props.accessToken);
     _this.generateUrl = lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.flow(lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.defaultTo('user'), lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.get(lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.__, _constants__WEBPACK_IMPORTED_MODULE_4__[/* getPathname */ "k"]), function (getter) {
       return getter(_this.props.param);
     }, lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.add(_constants__WEBPACK_IMPORTED_MODULE_4__[/* BASE_URL */ "a"]), _this.addToken, lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.add(lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.__, '&count=' + _this.props.count), lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.add(lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.__, '&callback=fetchInstagram'));
@@ -1896,7 +1896,8 @@ var Feed = function (_PureComponent) {
       error: null,
       nextUrl: null
     };
-    _this.url = !(lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.isNil(_this.props.accessToken) && lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.isNil(_this.props.clientId)) ? _this.generateUrl(_this.props.type) : null;
+
+    _this.url = _this.generateUrl(_this.props.type);
 
     global.fetchInstagram = function (res) {
       var meta = res.meta;
@@ -2033,10 +2034,9 @@ var Feed = function (_PureComponent) {
 
 Feed.propTypes = {
   className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-  accessToken: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-  clientId: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  accessToken: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
   count: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
-  type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf([_constants__WEBPACK_IMPORTED_MODULE_4__[/* POPULAR */ "c"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* TAGS */ "g"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* LOCATION */ "b"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* USER */ "j"]]).isRequired,
+  type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf([_constants__WEBPACK_IMPORTED_MODULE_4__[/* POPULAR */ "c"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* TAGS */ "g"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* LOCATION */ "b"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* USER */ "j"]]),
   param: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   resolution: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf([_constants__WEBPACK_IMPORTED_MODULE_4__[/* RESOLUTION_STANDARD */ "e"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* RESOLUTION_LOW */ "d"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* RESOLUTION_THUMBNAIL */ "f"]]),
   wrapper: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool]),
@@ -2050,9 +2050,8 @@ Feed.propTypes = {
 };
 Feed.defaultProps = {
   className: '',
-  accessToken: null,
-  clientId: null,
   count: 20,
+  type: _constants__WEBPACK_IMPORTED_MODULE_4__[/* USER */ "j"],
   param: null,
   resolution: _constants__WEBPACK_IMPORTED_MODULE_4__[/* RESOLUTION_LOW */ "d"],
   wrapper: null,
