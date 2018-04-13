@@ -1,0 +1,16 @@
+{
+  "plugins": [
+    "transform-class-properties",
+    "transform-object-rest-spread",
+  ],
+  "presets": [
+    [
+      "env",
+      {
+        "browsers": ["last 2 versions", "> 10%", "ie 9"],
+        "modules": false
+      }
+    ],
+    "react"
+  ]
+}
