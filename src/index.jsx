@@ -11,6 +11,7 @@ import {
   RESOLUTION_STANDARD,
   RESOLUTION_LOW,
   RESOLUTION_THUMBNAIL,
+  FULL_RESOLUTION_PROPERTY,
   TARGET_BLANK,
   TARGET_SELF,
   getPathname,
@@ -201,7 +202,7 @@ export default class Feed extends PureComponent {
               <img
                 key="image"
                 className="igf-image"
-                src={fp.get(`images.${resolution}.url`)(image)}
+                src={fp.get(`images.${FULL_RESOLUTION_PROPERTY[resolution]}.url`)(image)}
                 alt={fp.get('id')(image)}
               />,
               <span

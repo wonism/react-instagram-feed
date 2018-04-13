@@ -111,19 +111,20 @@ if (false) { var throwOnDirectAccess, isValidElement, REACT_ELEMENT_TYPE; } else
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BASE_URL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return POPULAR; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return TAGS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return LOCATION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return USER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return RESOLUTION_STANDARD; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return RESOLUTION_LOW; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return RESOLUTION_THUMBNAIL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return TARGET_BLANK; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return TARGET_SELF; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return POPULAR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return TAGS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return LOCATION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return USER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return RESOLUTION_STANDARD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return RESOLUTION_LOW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return RESOLUTION_THUMBNAIL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return FULL_RESOLUTION_PROPERTY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return TARGET_BLANK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return TARGET_SELF; });
 /* unused harmony export TARGET_PARENT */
 /* unused harmony export TARGET_TOP */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return getPathname; });
-var _getPathname;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return getPathname; });
+var _FULL_RESOLUTION_PROP, _getPathname;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -137,9 +138,10 @@ var LOCATION = 'location';
 var USER = 'user';
 
 /* resolution */
-var RESOLUTION_STANDARD = 'standard_resolution';
-var RESOLUTION_LOW = 'low_resolution';
-var RESOLUTION_THUMBNAIL = 'thumbnail_resolution';
+var RESOLUTION_STANDARD = 'standard';
+var RESOLUTION_LOW = 'low';
+var RESOLUTION_THUMBNAIL = 'thumbnail';
+var FULL_RESOLUTION_PROPERTY = (_FULL_RESOLUTION_PROP = {}, _defineProperty(_FULL_RESOLUTION_PROP, RESOLUTION_STANDARD, 'standard_resolution'), _defineProperty(_FULL_RESOLUTION_PROP, RESOLUTION_LOW, 'low_resolution'), _defineProperty(_FULL_RESOLUTION_PROP, RESOLUTION_THUMBNAIL, 'thumbnail'), _FULL_RESOLUTION_PROP);
 
 /* anchor target type */
 var TARGET_BLANK = '_blank';
@@ -1887,7 +1889,7 @@ var Feed = function (_PureComponent) {
     };
 
     _this.addToken = lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.add(lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.__, '?access_token=' + _this.props.accessToken);
-    _this.generateUrl = lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.flow(lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.defaultTo('user'), lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.get(lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.__, _constants__WEBPACK_IMPORTED_MODULE_4__[/* getPathname */ "k"]), function (getter) {
+    _this.generateUrl = lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.flow(lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.defaultTo('user'), lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.get(lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.__, _constants__WEBPACK_IMPORTED_MODULE_4__[/* getPathname */ "l"]), function (getter) {
       return getter(_this.props.param);
     }, lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.add(_constants__WEBPACK_IMPORTED_MODULE_4__[/* BASE_URL */ "a"]), _this.addToken, lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.add(lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.__, '&count=' + _this.props.count), lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.add(lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.__, '&callback=fetchInstagram'));
 
@@ -1967,7 +1969,7 @@ var Feed = function (_PureComponent) {
       var properties = lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.flow(function (prop) {
         return lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.isNil(linkTarget) ? prop : lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.set('target', linkTarget)(prop);
       }, function (prop) {
-        return linkTarget === _constants__WEBPACK_IMPORTED_MODULE_4__[/* TARGET_BLANK */ "h"] ? lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.set('rel', 'noopener noreferrer')(prop) : prop;
+        return linkTarget === _constants__WEBPACK_IMPORTED_MODULE_4__[/* TARGET_BLANK */ "i"] ? lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.set('rel', 'noopener noreferrer')(prop) : prop;
       })({});
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
@@ -1984,7 +1986,7 @@ var Feed = function (_PureComponent) {
           var imageWrapper = Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(hasLink ? 'a' : 'span', hasLink ? lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.flow(lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.set('href', lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.get('link')(image)), lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.set('key', lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.get('id')(image)))(properties) : lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.set('key', lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.get('id')(image))(properties), [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('img', {
             key: 'image',
             className: 'igf-image',
-            src: lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.get('images.' + resolution + '.url')(image),
+            src: lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.get('images.' + _constants__WEBPACK_IMPORTED_MODULE_4__[/* FULL_RESOLUTION_PROPERTY */ "b"][resolution] + '.url')(image),
             alt: lodash_fp__WEBPACK_IMPORTED_MODULE_3___default.a.get('id')(image)
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
             'span',
@@ -2036,12 +2038,12 @@ Feed.propTypes = {
   className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   accessToken: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
   count: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
-  type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf([_constants__WEBPACK_IMPORTED_MODULE_4__[/* POPULAR */ "c"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* TAGS */ "g"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* LOCATION */ "b"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* USER */ "j"]]),
+  type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf([_constants__WEBPACK_IMPORTED_MODULE_4__[/* POPULAR */ "d"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* TAGS */ "h"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* LOCATION */ "c"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* USER */ "k"]]),
   param: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-  resolution: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf([_constants__WEBPACK_IMPORTED_MODULE_4__[/* RESOLUTION_STANDARD */ "e"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* RESOLUTION_LOW */ "d"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* RESOLUTION_THUMBNAIL */ "f"]]),
+  resolution: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf([_constants__WEBPACK_IMPORTED_MODULE_4__[/* RESOLUTION_STANDARD */ "f"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* RESOLUTION_LOW */ "e"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* RESOLUTION_THUMBNAIL */ "g"]]),
   wrapper: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool]),
   hasLink: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
-  linkTarget: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf([_constants__WEBPACK_IMPORTED_MODULE_4__[/* TARGET_BLANK */ "h"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* TARGET_SELF */ "i"]]),
+  linkTarget: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf([_constants__WEBPACK_IMPORTED_MODULE_4__[/* TARGET_BLANK */ "i"], _constants__WEBPACK_IMPORTED_MODULE_4__[/* TARGET_SELF */ "j"]]),
   showButton: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
   buttonText: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   before: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
@@ -2051,12 +2053,12 @@ Feed.propTypes = {
 Feed.defaultProps = {
   className: '',
   count: 20,
-  type: _constants__WEBPACK_IMPORTED_MODULE_4__[/* USER */ "j"],
+  type: _constants__WEBPACK_IMPORTED_MODULE_4__[/* USER */ "k"],
   param: null,
-  resolution: _constants__WEBPACK_IMPORTED_MODULE_4__[/* RESOLUTION_LOW */ "d"],
+  resolution: _constants__WEBPACK_IMPORTED_MODULE_4__[/* RESOLUTION_LOW */ "e"],
   wrapper: null,
   hasLink: false,
-  linkTarget: _constants__WEBPACK_IMPORTED_MODULE_4__[/* TARGET_BLANK */ "h"],
+  linkTarget: _constants__WEBPACK_IMPORTED_MODULE_4__[/* TARGET_BLANK */ "i"],
   showButton: true,
   buttonText: 'Fetch Feeds',
   before: function before() {},

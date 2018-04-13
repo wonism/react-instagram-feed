@@ -8,9 +8,14 @@ export const LOCATION = 'location';
 export const USER = 'user';
 
 /* resolution */
-export const RESOLUTION_STANDARD = 'standard_resolution';
-export const RESOLUTION_LOW = 'low_resolution';
-export const RESOLUTION_THUMBNAIL = 'thumbnail_resolution';
+export const RESOLUTION_STANDARD = 'standard';
+export const RESOLUTION_LOW = 'low';
+export const RESOLUTION_THUMBNAIL = 'thumbnail';
+export const FULL_RESOLUTION_PROPERTY = {
+  [RESOLUTION_STANDARD]: 'standard_resolution',
+  [RESOLUTION_LOW]: 'low_resolution',
+  [RESOLUTION_THUMBNAIL]: 'thumbnail',
+};
 
 /* anchor target type */
 export const TARGET_BLANK = '_blank';
