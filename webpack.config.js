@@ -46,6 +46,7 @@ const config = {
     publicPath: '/',
     filename: 'react-instagram-feed.js',
     libraryTarget: 'umd',
+    globalObject: 'this',
   },
   resolve: {
     extensions: ['.js', '.jsx'],

@@ -11,3 +11,6 @@
 - fix bug
   - change prop types of resolution
 - add husky for pre-commit
+
+## 0.1.3-alpha - 2018-04-18
+- use `this` instead of `window` in build file
